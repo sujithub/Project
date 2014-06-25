@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tool="http://www.springframework.org/schema/tool"          
+       xsi:schemaLocation="
+                http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
+                http://www.springframework.org/schema/tool http://www.springframework.org/schema/tx/spring-tool-2.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.0.xsd">
+  
+    <aop:aspectj-autoproxy />
+   
+    <bean id="circle" class="com.vit.springaop.model.Circle">
+        <property name="name" value="Circle"/>
+    </bean>
+    <bean id="triangle" class="com.vit.springaop.model.Triangle">
+        <property name="name" value="Triangle"/>
+    </bean>
+    
+    <bean id="shpaeServices" class="com.vit.springaop.services.ShapeServices" autowire="byName"/> 
+    
+    <bean id="loginAspcet" class="com.vit.springaop.aspect.LoginAspect"/>
+</beans>
